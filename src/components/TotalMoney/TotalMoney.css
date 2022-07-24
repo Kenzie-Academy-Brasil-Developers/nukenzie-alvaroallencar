@@ -1,0 +1,22 @@
+.totalBalance {
+  width: 22.688rem;
+  height: 6rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(var(--color-white), 1);
+  border: 0.063rem solid rgba(var(--color-gray2), 1);
+  border-radius: 0.25rem;
+}
+
+.totalBalanceTitle {
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgba(var(--color-gray4), 1);
+}
+
+.totalBalanceValue {
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgba(var(--color-pink), 1);
+}

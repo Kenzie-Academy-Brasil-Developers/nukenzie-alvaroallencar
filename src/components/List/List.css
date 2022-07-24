@@ -1,0 +1,55 @@
+.secondColumnPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.25em;
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listHeader > p {
+  width: 40%;
+  font-weight: 700;
+  font-size: 1rem;
+  color: rgba(var(--color-gray4), 1);
+}
+
+.filterButtons {
+  width: 100%;
+}
+
+.buttonsList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.buttonsList > li > button {
+  padding: 0.656em 0.938em;
+  height: 2.5rem;
+  align-self: center;
+  font-size: 0.875em;
+  color: rgba(var(--color-gray4), 1);
+  background-color: rgba(var(--color-gray2), 1);
+  border: 0.087em solid rgba(var(--color-gray2), 1);
+  border-radius: 0.5em;
+}
+
+.buttonsList > li > button:active {
+  color: rgba(var(--color-white), 1);
+  background-color: rgba(var(--color-pink), 1);
+}
+
+.transactionsList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 60vh;
+}

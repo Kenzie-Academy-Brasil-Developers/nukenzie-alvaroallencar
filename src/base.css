@@ -1,0 +1,15 @@
+:root {
+  --color-pink: 253, 55, 126;
+  --color-pink-dark: 227, 73, 129;
+  --color-green: 3, 184, 152;
+
+  --color-gray4: 33, 37, 41;
+  --color-gray3: 134, 142, 150;
+  --color-gray2: 233, 236, 239;
+  --color-gray1: 248, 249, 250;
+
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+
+  --font-base: "Nunito", sans-serif;
+}

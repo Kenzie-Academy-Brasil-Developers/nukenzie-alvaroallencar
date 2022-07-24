@@ -1,0 +1,58 @@
+.transactionCard {
+  width: 100%;
+  min-height: 5.625em;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.938em;
+  border-radius: 0.25em;
+  background-color: rgba(var(--color-gray1), 1);
+  border: 0.063em solid rgb(var(--color-gray2));
+}
+
+.cardFirstColumn {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.descriptionText {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.transactionType {
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+
+.cardSecondColumn {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cardSecondColumn > p {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: rgba(var(--color-gray4), 1);
+}
+
+.cardThirdColumn {
+  width: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cardThirdColumn > button {
+  width: 1.563rem;
+  height: 1.563rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.156em;
+  background-color: rgba(var(--color-gray2), 1);
+}
