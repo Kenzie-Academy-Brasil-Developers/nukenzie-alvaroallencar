@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 1.25em;
+  margin-bottom: 50px;
 }
 
 .secondColumnPage > p {

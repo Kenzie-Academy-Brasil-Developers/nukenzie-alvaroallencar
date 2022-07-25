@@ -74,22 +74,6 @@ const List = ({
     </section>
   ) : (
     <section className="secondColumnPage">
-      <div className="listHeader">
-        <p>Resumo financeiro</p>
-        <nav className="filterButtons">
-          <ul className="buttonsList">
-            <li>
-              <button>Todos</button>
-            </li>
-            <li>
-              <button>Entradas</button>
-            </li>
-            <li>
-              <button>Despesas</button>
-            </li>
-          </ul>
-        </nav>
-      </div>
       <p>Você não possui nenhum lançamento :(</p>
       <img className="noCard" src={NoCard} alt="loading" />
     </section>
