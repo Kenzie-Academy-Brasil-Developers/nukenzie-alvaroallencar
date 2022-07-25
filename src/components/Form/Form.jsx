@@ -16,6 +16,7 @@ const Form = ({ listTransactions, setListTransactions }) => {
           <input
             type="text"
             id="description"
+            maxLength="60"
             placeholder="Digite aqui sua descrição"
             value={description}
             onChange={(e) => {
@@ -30,6 +31,7 @@ const Form = ({ listTransactions, setListTransactions }) => {
             <input
               type="number"
               id="value"
+              maxLength="10"
               placeholder="0"
               value={value}
               min="0"
