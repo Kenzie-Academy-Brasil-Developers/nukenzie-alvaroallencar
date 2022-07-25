@@ -83,6 +83,8 @@ const Form = ({ listTransactions, setListTransactions }) => {
                     ...listTransactions,
                   ]);
                 }
+                setDescription("");
+                setValue("");
               }
             }}
           >

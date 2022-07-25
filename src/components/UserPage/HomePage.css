@@ -1,0 +1,175 @@
+.root {
+  background-color: rgba(var(--color-gray4), 1);
+  width: 100%;
+  height: 100%;
+}
+
+.homePageBox {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  gap: 3em;
+  justify-content: center;
+  align-items: center;
+}
+
+.homePageInfoBox {
+  height: 500px;
+  max-width: 31.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.homePageInfoBox > img {
+  width: 150px;
+}
+
+.homePageInfoBox > h1 {
+  font-weight: 800;
+  font-size: 2.375rem;
+  line-height: 3rem;
+  color: rgba(var(--color-white), 1);
+}
+
+.homePageInfoBox > p {
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: rgba(var(--color-white), 1);
+}
+
+.nuKenzieImageGroupBox > button {
+  background-color: rgba(var(--color-gray4), 1);
+}
+
+.nuKenzieImageGroupBox > img {
+  height: 500px;
+  max-width: 37.5rem;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.nuKenzieImageGroupBox > img:hover {
+  transform: scale(1.05);
+}
+
+.homePageInfoBox > button {
+  width: 15.063em;
+  height: 3em;
+  color: rgba(var(--color-white), 1);
+  background-color: rgba(var(--color-pink), 1);
+  border: 0.125em solid rgba(var(--color-pink), 1);
+  border-radius: 0.5em;
+}
+
+@media screen and (max-width: 800px) {
+  .homePageBox {
+    height: 300px;
+    display: flex;
+  }
+
+  .homePageInfoBox {
+    height: 300px;
+  }
+
+  .homePageInfoBox > img {
+    width: 120px;
+  }
+
+  .homePageInfoBox > h1 {
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .homePageInfoBox > p {
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+
+  .homePageInfoBox > button {
+    width: 13em;
+    height: 2.5em;
+  }
+
+  .nuKenzieImageGroupBox > img {
+    height: 300px;
+    max-width: 37.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .homePageBox {
+    height: 300px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+  }
+
+  .homePageInfoBox {
+    gap: 0.625em;
+  }
+
+  .homePageInfoBox > img {
+    width: 100px;
+  }
+
+  .homePageInfoBox > h1 {
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .homePageInfoBox > p {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .nuKenzieImageGroupBox > img {
+    height: 200px;
+  }
+
+  .homePageInfoBox > button {
+    width: 10em;
+    height: 2rem;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .homePageBox {
+    height: 300px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+  }
+
+  .homePageInfoBox {
+    gap: 0.625em;
+  }
+
+  .homePageInfoBox > img {
+    width: 100px;
+  }
+
+  .homePageInfoBox > h1 {
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .homePageInfoBox > p {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .nuKenzieImageGroupBox > img {
+    height: 200px;
+  }
+
+  .homePageInfoBox > button {
+    width: 10em;
+    height: 2rem;
+    align-self: center;
+  }
+}

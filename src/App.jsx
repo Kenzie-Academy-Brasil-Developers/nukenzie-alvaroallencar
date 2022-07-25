@@ -1,8 +1,11 @@
 import { useState } from "react";
 import NuKenzie from "./assets/img/NuKenzie.svg";
+import NuKenzieWhite from "../src/assets/img/NuKenzieWhite.svg";
+import NoCard from "../src/assets/img/NoCard.svg";
+import NuKenzieImageGroup from "../src/assets/img/NuKenzieImageGroup.svg";
 
+import HomePage from "./components/UserPage/HomePage.jsx";
 import Header from "./components/Header/Header.jsx";
-// import Footer from "./components/Footer/index.jsx";
 import Form from "./components/Form/Form.jsx";
 import List from "./components/List/List.jsx";
 
@@ -11,10 +14,13 @@ import "./reset.css";
 import "./App.css";
 
 const App = () => {
-  const [listTransactions, setListTransactions] = useState([
-    // { description: "Salário recebido", type: "Entrada", value: 2500 },
-    // { description: "Conta de luz", type: "Saída", value: -150 },
-  ]);
+  const [listTransactions, setListTransactions] = useState([]);
+
+  const [isAccessGranted, setIsAccessGranted] = useState(false);
+
+  const userPage = () => setIsAccessGranted(true);
+
+  const homePage = () => setIsAccessGranted(false);
 
   const handleTransactions = (transactionToRemove) => {
     setListTransactions(
@@ -23,14 +29,9 @@ const App = () => {
       )
     );
   };
-
-  // const filterTransactions = () => {
-
-  // }
-
-  return (
-    <div className="app">
-      <Header NuKenzie={NuKenzie} />
+  return isAccessGranted ? (
+    <div className="userPage">
+      <Header NuKenzie={NuKenzie} homePage={homePage} />
       <main className="mainContainer">
         <Form
           listTransactions={listTransactions}
@@ -40,8 +41,17 @@ const App = () => {
           listTransactions={listTransactions}
           handleTransactions={handleTransactions}
           setListTransactions={setListTransactions}
+          NoCard={NoCard}
         />
       </main>
+    </div>
+  ) : (
+    <div className="homePage">
+      <HomePage
+        userPage={userPage}
+        NuKenzieImageGroup={NuKenzieImageGroup}
+        NuKenzieWhite={NuKenzieWhite}
+      />
     </div>
   );
 };

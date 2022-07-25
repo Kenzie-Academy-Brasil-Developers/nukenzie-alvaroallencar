@@ -6,38 +6,45 @@ const List = ({
   listTransactions,
   handleTransactions,
   setListTransactions,
+  NoCard,
 }) => {
-  const allTransactions = listTransactions;
+  // const allTransactions = listTransactions;
 
-  const filterAll = () => {
-    return setListTransactions(allTransactions);
-  };
-  const filterIncome = () => {
-    setListTransactions(allTransactions);
-    return setListTransactions(
-      allTransactions.filter((transaction) => transaction.type === "Entrada")
-    );
-  };
-  const filterExpense = () => {
-    setListTransactions(allTransactions);
-    return setListTransactions(
-      allTransactions.filter((transaction) => transaction.type === "Saída")
-    );
-  };
-  return (
+  // const filterAll = () => {
+  //   return setListTransactions(allTransactions);
+  // };
+  // const filterIncome = () => {
+  //   setListTransactions(allTransactions);
+  //   return setListTransactions(
+  //     allTransactions.filter((transaction) => transaction.type === "Entrada")
+  //   );
+  // };
+  // const filterExpense = () => {
+  //   setListTransactions(allTransactions);
+  //   return setListTransactions(
+  //     allTransactions.filter((transaction) => transaction.type === "Saída")
+  //   );
+  // };
+  return listTransactions.length > 0 ? (
     <section className="secondColumnPage">
       <div className="listHeader">
         <p>Resumo financeiro</p>
         <nav className="filterButtons">
           <ul className="buttonsList">
             <li>
-              <button onClick={filterAll}>Todos</button>
+              <button type="button" disabled>
+                Todos
+              </button>
             </li>
             <li>
-              <button onClick={filterIncome}>Entradas</button>
+              <button type="button" disabled>
+                Entradas
+              </button>
             </li>
             <li>
-              <button onClick={filterExpense}>Despesas</button>
+              <button type="button" disabled>
+                Despesas
+              </button>
             </li>
           </ul>
         </nav>
@@ -54,7 +61,7 @@ const List = ({
             <li
               className="transactionCard"
               key={index}
-              style={{ borderLeft: `0.25em solid rgba(${color}, 1)` }}
+              style={{ borderLeft: `0.313em solid rgba(${color}, 1)` }}
             >
               <Card
                 transaction={transaction}
@@ -64,6 +71,27 @@ const List = ({
           );
         })}
       </ul>
+    </section>
+  ) : (
+    <section className="secondColumnPage">
+      <div className="listHeader">
+        <p>Resumo financeiro</p>
+        <nav className="filterButtons">
+          <ul className="buttonsList">
+            <li>
+              <button>Todos</button>
+            </li>
+            <li>
+              <button>Entradas</button>
+            </li>
+            <li>
+              <button>Despesas</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <p>Você não possui nenhum lançamento :(</p>
+      <img className="noCard" src={NoCard} alt="loading" />
     </section>
   );
 };

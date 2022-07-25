@@ -5,11 +5,11 @@
   justify-content: center;
   align-items: center;
   background-color: rgb(var(--color-gray1));
-  box-shadow: 0em 0.25em 2em -0.75em rgba(var(--color-black), 0.25);
+  box-shadow: 0em 0.25em 2em -0.75em rgba(var(--color-black), 0.3);
 }
 
 .nuKenzieHeaderContainer {
-  width: 100%;
+  width: 95%;
   height: 5.5rem;
   max-width: 81.25rem;
   display: flex;
@@ -23,6 +23,18 @@
   align-items: center;
 }
 
+.logo {
+  transition: 0.2s;
+  cursor: pointer;
+}
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo:focus {
+  transform: scale(1.02);
+}
+
 .homePageButton {
   font-weight: 600;
   font-size: 0.875em;
@@ -32,4 +44,15 @@
   color: rgba(var(--color-gray4), 1);
   border: 0.087em solid rgba(var(--color-gray2), 1);
   background-color: rgba(var(--color-gray2), 1);
+}
+
+.homePageButton:hover {
+  color: rgba(var(--color-white), 1);
+  background-color: rgb(var(--color-pink-dark));
+}
+
+@media screen and (max-width: 1024px) {
+  .nuKenzieHeaderContainer {
+    height: 4.375em;
+  }
 }
