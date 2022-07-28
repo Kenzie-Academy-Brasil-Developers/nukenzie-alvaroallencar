@@ -29,6 +29,7 @@ const App = () => {
       )
     );
   };
+  
   return isAccessGranted ? (
     <div className="userPage">
       <Header NuKenzie={NuKenzie} homePage={homePage} />

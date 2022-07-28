@@ -6,7 +6,7 @@ import "./Form.css";
 const Form = ({ listTransactions, setListTransactions }) => {
   const [description, setDescription] = useState("");
   const [value, setValue] = useState("");
-  const [valueType, setValueType] = useState("Entrada");
+  const [valueType, setValueType] = useState("Selecione");
 
   return (
     <section className="firstColumnPage">
@@ -32,7 +32,7 @@ const Form = ({ listTransactions, setListTransactions }) => {
               type="number"
               id="value"
               maxLength="10"
-              placeholder="0"
+              placeholder="$"
               value={value}
               min="0"
               onKeyUp={(e) => {
@@ -55,6 +55,7 @@ const Form = ({ listTransactions, setListTransactions }) => {
                 setValueType(e.target.value);
               }}
             >
+              <option value="Selecione">-Selecione-</option>
               <option value="Entrada">Entrada</option>
               <option value="Saída">Saída</option>
             </select>
@@ -65,7 +66,12 @@ const Form = ({ listTransactions, setListTransactions }) => {
             className="insertRecordButton"
             onClick={(e) => {
               e.preventDefault();
-              if (description !== "" && value !== "" && value > 0) {
+              if (
+                description !== "" &&
+                value !== "" &&
+                value > 0 &&
+                valueType !== "Selecione"
+              ) {
                 if (valueType === "Entrada") {
                   setListTransactions([
                     {
@@ -87,6 +93,7 @@ const Form = ({ listTransactions, setListTransactions }) => {
                 }
                 setDescription("");
                 setValue("");
+                setValueType("Selecione");
               }
             }}
           >
