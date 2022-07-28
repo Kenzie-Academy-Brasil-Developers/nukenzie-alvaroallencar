@@ -47,17 +47,11 @@
   height: 2.5rem;
   align-self: center;
   font-size: 0.875em;
-  color: rgba(var(--color-gray4), 0.5);
+  color: rgba(var(--color-gray4), 1);
   background-color: rgba(var(--color-gray2), 0.5);
   border: 0.087em solid rgba(var(--color-gray2), 0.5);
   border-radius: 0.5em;
-  cursor: not-allowed;
 }
-
-/* .buttonsList > li > button:active {
-  color: rgba(var(--color-white), 1);
-  background-color: rgba(var(--color-pink), 1);
-} */
 
 .noCard {
   width: 100%;

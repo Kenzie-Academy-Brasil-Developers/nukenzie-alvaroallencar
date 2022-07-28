@@ -1,30 +1,36 @@
+import { useState, useEffect } from "react";
 import Card from "../Card/Card";
 
 import "./List.css";
 
-const List = ({
-  listTransactions,
-  handleTransactions,
-  setListTransactions,
-  NoCard,
-}) => {
-  // const allTransactions = listTransactions;
+const List = ({ listTransactions, handleTransactions, NoCard }) => {
+  // atribuindo a listTransactions a outro state:
 
-  // const filterAll = () => {
-  //   return setListTransactions(allTransactions);
-  // };
-  // const filterIncome = () => {
-  //   setListTransactions(allTransactions);
-  //   return setListTransactions(
-  //     allTransactions.filter((transaction) => transaction.type === "Entrada")
-  //   );
-  // };
-  // const filterExpense = () => {
-  //   setListTransactions(allTransactions);
-  //   return setListTransactions(
-  //     allTransactions.filter((transaction) => transaction.type === "Saída")
-  //   );
-  // };
+  const [filteredTransactions, setFilteredTransactions] =
+    useState(listTransactions);
+
+  useEffect(() => {
+    setFilteredTransactions(listTransactions);
+  }, [listTransactions]);
+
+  // filtros das transações:
+
+  const filterAll = () => {
+    setFilteredTransactions(listTransactions);
+  };
+
+  const filterIncome = () => {
+    setFilteredTransactions(
+      listTransactions.filter((transaction) => transaction.type === "Entrada")
+    );
+  };
+
+  const filterExpense = () => {
+    setFilteredTransactions(
+      listTransactions.filter((transaction) => transaction.type === "Saída")
+    );
+  };
+
   return listTransactions.length > 0 ? (
     <section className="secondColumnPage">
       <div className="listHeader">
@@ -32,17 +38,17 @@ const List = ({
         <nav className="filterButtons">
           <ul className="buttonsList">
             <li>
-              <button type="button" disabled>
+              <button type="button" onClick={filterAll}>
                 Todos
               </button>
             </li>
             <li>
-              <button type="button" disabled>
+              <button type="button" onClick={filterIncome}>
                 Entradas
               </button>
             </li>
             <li>
-              <button type="button" disabled>
+              <button type="button" onClick={filterExpense}>
                 Despesas
               </button>
             </li>
@@ -50,7 +56,7 @@ const List = ({
         </nav>
       </div>
       <ul className="transactionsList">
-        {listTransactions.map((transaction, index) => {
+        {filteredTransactions.map((transaction, index) => {
           let color;
           if (transaction.type === "Entrada") {
             color = "3, 184, 152";
