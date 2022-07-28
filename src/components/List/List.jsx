@@ -9,26 +9,44 @@ const List = ({ listTransactions, handleTransactions, NoCard }) => {
   const [filteredTransactions, setFilteredTransactions] =
     useState(listTransactions);
 
+  // alterando o estado dos botões de filtro:
+
+  const [allselected, setAllSelected] = useState(true);
+  const [incomeselected, setIncomeSelected] = useState(false);
+  const [expenseSelected, setExpenseSelected] = useState(false);
+
   useEffect(() => {
     setFilteredTransactions(listTransactions);
+    setAllSelected(true);
+    setIncomeSelected(false);
+    setExpenseSelected(false);
   }, [listTransactions]);
 
   // filtros das transações:
 
   const filterAll = () => {
     setFilteredTransactions(listTransactions);
+    setAllSelected(true);
+    setIncomeSelected(false);
+    setExpenseSelected(false);
   };
 
   const filterIncome = () => {
     setFilteredTransactions(
       listTransactions.filter((transaction) => transaction.type === "Entrada")
     );
+    setAllSelected(false);
+    setIncomeSelected(true);
+    setExpenseSelected(false);
   };
 
   const filterExpense = () => {
     setFilteredTransactions(
       listTransactions.filter((transaction) => transaction.type === "Saída")
     );
+    setAllSelected(false);
+    setIncomeSelected(false);
+    setExpenseSelected(true);
   };
 
   return listTransactions.length > 0 ? (
@@ -38,17 +56,29 @@ const List = ({ listTransactions, handleTransactions, NoCard }) => {
         <nav className="filterButtons">
           <ul className="buttonsList">
             <li>
-              <button type="button" onClick={filterAll}>
+              <button
+                type="button"
+                className={allselected ? "selected" : "unselected"}
+                onClick={filterAll}
+              >
                 Todos
               </button>
             </li>
             <li>
-              <button type="button" onClick={filterIncome}>
+              <button
+                type="button"
+                className={incomeselected ? "selected" : "unselected"}
+                onClick={filterIncome}
+              >
                 Entradas
               </button>
             </li>
             <li>
-              <button type="button" onClick={filterExpense}>
+              <button
+                type="button"
+                className={expenseSelected ? "selected" : "unselected"}
+                onClick={filterExpense}
+              >
                 Despesas
               </button>
             </li>
