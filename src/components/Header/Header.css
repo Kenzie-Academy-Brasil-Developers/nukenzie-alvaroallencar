@@ -48,7 +48,7 @@
 
 .homePageButton:hover {
   color: rgba(var(--color-white), 1);
-  background-color: rgb(var(--color-pink-dark));
+  background-color: rgb(var(--color-pink));
 }
 
 @media screen and (max-width: 1024px) {
